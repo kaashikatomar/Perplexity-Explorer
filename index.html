@@ -12,29 +12,27 @@
 
   <style>
     /* ==========================================================================
-       1. CSS VARIABLES & CYBERPUNK NEON AI LAB THEME
+       1. STRICT PURPLE-BLUE NEON COLOR PALETTE & DESIGN SYSTEM
        ========================================================================== */
     :root {
-      --bg-main: #080B16;
-      --bg-secondary: #101629;
-      --bg-card: #141B30;
-      --bg-card-hover: #19223D;
+      --bg-main: #05030D;
+      --bg-secondary: #090817;
+      --bg-card: #100D20;
+      --bg-card-hover: #16122C;
       
-      --neon-cyan: #00F5FF;
-      --electric-blue: #3B82F6;
-      --neon-purple: #A855F7;
-      --hot-pink: #FF3CAC;
-      --neon-green: #39FF88;
-      --neon-red: #FF3366;
+      --neon-purple: #852CFF;
+      --bright-purple: #B44CFF;
+      --electric-blue: #287BFF;
+      --light-blue: #55A5FF;
       
-      --text-main: #F5F7FF;
-      --text-secondary: #A6B0C8;
-      --text-muted: #626D8A;
+      --primary-text: #F5F3FF;
+      --secondary-text: #AAA4C5;
+      --text-muted: #6B648C;
 
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-cyan: rgba(0, 245, 255, 0.35);
-      --border-purple: rgba(168, 85, 247, 0.35);
-      --border-pink: rgba(255, 60, 172, 0.35);
+      --border-subtle: rgba(133, 44, 255, 0.16);
+      --border-glow-purple: rgba(180, 76, 255, 0.45);
+      --border-glow-blue: rgba(40, 123, 255, 0.45);
+      --border-glow-mix: rgba(133, 44, 255, 0.35);
 
       --font-heading: 'Space Grotesk', system-ui, sans-serif;
       --font-body: 'Inter', system-ui, sans-serif;
@@ -49,7 +47,7 @@
 
     body {
       background-color: var(--bg-main);
-      color: var(--text-main);
+      color: var(--primary-text);
       font-family: var(--font-body);
       line-height: 1.6;
       overflow-x: hidden;
@@ -57,38 +55,22 @@
       position: relative;
     }
 
-    /* Subtle grid overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: 40px 40px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Ambient glowing background blobs */
+    /* Ambient Glowing Atmospheric Spheres */
     .ambient-glow {
       position: fixed;
-      width: 600px;
-      height: 600px;
+      width: 700px;
+      height: 700px;
       border-radius: 50%;
       pointer-events: none;
-      filter: blur(140px);
-      opacity: 0.12;
+      filter: blur(150px);
+      opacity: 0.16;
       z-index: 0;
     }
-    .glow-1 { top: -100px; left: 10%; background: var(--neon-purple); }
-    .glow-2 { top: 30%; right: -100px; background: var(--neon-cyan); }
-    .glow-3 { bottom: 10%; left: 20%; background: var(--electric-blue); }
+    .glow-1 { top: -120px; left: 15%; background: var(--neon-purple); }
+    .glow-2 { top: 35%; right: -120px; background: var(--electric-blue); }
+    .glow-3 { bottom: 8%; left: 10%; background: var(--bright-purple); }
 
-    /* Interactive Canvas */
+    /* Flowing Waves Canvas */
     #bg-canvas {
       position: fixed;
       top: 0;
@@ -112,7 +94,7 @@
       font-family: var(--font-heading);
       font-weight: 700;
       letter-spacing: -0.02em;
-      color: var(--text-main);
+      color: var(--primary-text);
     }
 
     .font-mono {
@@ -120,48 +102,44 @@
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 50%, var(--hot-pink) 100%);
+      background: linear-gradient(135deg, var(--bright-purple) 0%, var(--neon-purple) 35%, var(--electric-blue) 75%, var(--light-blue) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .gradient-cyan-blue {
-      background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--electric-blue) 100%);
+    .gradient-blue-purple {
+      background: linear-gradient(135deg, var(--light-blue) 0%, var(--electric-blue) 50%, var(--neon-purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Glassmorphism Card Style */
+    /* Glassmorphic Cards */
     .glass-card {
-      background: rgba(20, 27, 48, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(16, 13, 32, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border-subtle);
       border-radius: 20px;
       padding: 32px;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.7);
     }
 
     .glass-card:hover {
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.6);
-    }
-
-    .glass-card.glow-cyan {
-      border-color: var(--border-cyan);
-      box-shadow: 0 0 35px -8px rgba(0, 245, 255, 0.2);
+      border-color: var(--border-glow-purple);
+      box-shadow: 0 16px 45px -10px rgba(133, 44, 255, 0.22);
+      transform: translateY(-2px);
     }
 
     .glass-card.glow-purple {
-      border-color: var(--border-purple);
-      box-shadow: 0 0 35px -8px rgba(168, 85, 247, 0.2);
+      border-color: var(--border-glow-purple);
+      box-shadow: 0 0 35px -8px rgba(133, 44, 255, 0.35);
     }
 
-    .glass-card.glow-pink {
-      border-color: var(--border-pink);
-      box-shadow: 0 0 35px -8px rgba(255, 60, 172, 0.2);
+    .glass-card.glow-blue {
+      border-color: var(--border-glow-blue);
+      box-shadow: 0 0 35px -8px rgba(40, 123, 255, 0.35);
     }
 
     /* Section Badges */
@@ -177,14 +155,15 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
+      background: rgba(133, 44, 255, 0.08);
+      border: 1px solid rgba(133, 44, 255, 0.3);
+      color: var(--bright-purple);
     }
-    .badge-cyan { color: var(--neon-cyan); border-color: rgba(0, 245, 255, 0.3); background: rgba(0, 245, 255, 0.08); }
-    .badge-blue { color: var(--electric-blue); border-color: rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.08); }
-    .badge-purple { color: var(--neon-purple); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
-    .badge-pink { color: var(--hot-pink); border-color: rgba(255, 60, 172, 0.3); background: rgba(255, 60, 172, 0.08); }
-    .badge-green { color: var(--neon-green); border-color: rgba(57, 255, 136, 0.3); background: rgba(57, 255, 136, 0.08); }
+    .badge-blue {
+      color: var(--light-blue);
+      border-color: rgba(40, 123, 255, 0.35);
+      background: rgba(40, 123, 255, 0.08);
+    }
 
     /* Buttons */
     .btn {
@@ -206,12 +185,13 @@
     }
 
     .btn-neon-primary {
-      background: linear-gradient(135deg, #00F5FF 0%, #3B82F6 50%, #A855F7 100%);
-      color: #080B16;
-      box-shadow: 0 0 25px rgba(0, 245, 255, 0.4);
+      background: linear-gradient(135deg, var(--neon-purple) 0%, var(--electric-blue) 100%);
+      color: #FFFFFF;
+      box-shadow: 0 0 25px rgba(133, 44, 255, 0.45), 0 0 15px rgba(40, 123, 255, 0.3);
     }
     .btn-neon-primary:hover {
-      box-shadow: 0 0 35px rgba(0, 245, 255, 0.6);
+      background: linear-gradient(135deg, var(--bright-purple) 0%, var(--light-blue) 100%);
+      box-shadow: 0 0 35px rgba(180, 76, 255, 0.65), 0 0 20px rgba(85, 165, 255, 0.45);
       transform: translateY(-2px);
     }
     .btn-neon-primary:active {
@@ -219,15 +199,15 @@
     }
 
     .btn-neon-secondary {
-      background: rgba(20, 27, 48, 0.8);
-      color: var(--text-main);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(8px);
+      background: rgba(16, 13, 32, 0.85);
+      color: var(--primary-text);
+      border: 1px solid var(--border-glow-purple);
+      backdrop-filter: blur(10px);
     }
     .btn-neon-secondary:hover {
-      border-color: var(--neon-purple);
-      color: var(--neon-cyan);
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+      border-color: var(--light-blue);
+      color: var(--light-blue);
+      box-shadow: 0 0 25px rgba(40, 123, 255, 0.35);
       transform: translateY(-2px);
     }
 
@@ -244,9 +224,9 @@
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(8, 11, 22, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(9, 8, 23, 0.88);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
       border-bottom: 1px solid var(--border-subtle);
       z-index: 100;
       padding: 14px 0;
@@ -263,7 +243,7 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--primary-text);
       font-family: var(--font-heading);
       font-weight: 800;
       font-size: 1.15rem;
@@ -274,14 +254,14 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      background: linear-gradient(135deg, var(--bright-purple), var(--electric-blue));
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #080B16;
+      color: #FFFFFF;
       font-weight: 900;
       font-size: 1.1rem;
-      box-shadow: 0 0 15px rgba(0, 245, 255, 0.35);
+      box-shadow: 0 0 20px rgba(133, 44, 255, 0.45);
     }
 
     .nav-links {
@@ -292,7 +272,7 @@
     }
 
     .nav-links a {
-      color: var(--text-secondary);
+      color: var(--secondary-text);
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -302,8 +282,8 @@
     }
 
     .nav-links a:hover, .nav-links a.active {
-      color: var(--neon-cyan);
-      background: rgba(0, 245, 255, 0.08);
+      color: var(--light-blue);
+      background: rgba(40, 123, 255, 0.12);
     }
 
     /* Model Status Badge in Nav */
@@ -313,12 +293,12 @@
       gap: 8px;
       padding: 6px 14px;
       border-radius: 9999px;
-      background: rgba(16, 22, 41, 0.9);
+      background: rgba(16, 13, 32, 0.95);
       border: 1px solid var(--border-subtle);
       font-family: var(--font-mono);
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--secondary-text);
     }
 
     .status-dot {
@@ -327,25 +307,25 @@
       border-radius: 50%;
       background: var(--text-muted);
     }
-    .status-dot.ready { background: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
-    .status-dot.loading { background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 1.5s infinite; }
-    .status-dot.analyzing { background: var(--neon-purple); box-shadow: 0 0 10px var(--neon-purple); animation: pulse 1s infinite; }
-    .status-dot.error { background: var(--neon-red); box-shadow: 0 0 10px var(--neon-red); }
+    .status-dot.ready { background: var(--light-blue); box-shadow: 0 0 10px var(--electric-blue); }
+    .status-dot.loading { background: var(--bright-purple); box-shadow: 0 0 10px var(--neon-purple); animation: pulse 1.5s infinite; }
+    .status-dot.analyzing { background: var(--electric-blue); box-shadow: 0 0 10px var(--electric-blue); animation: pulse 1s infinite; }
+    .status-dot.error { background: #852CFF; box-shadow: 0 0 10px #852CFF; }
 
     .mobile-menu-btn {
       display: none;
       background: transparent;
       border: none;
-      color: var(--text-main);
+      color: var(--primary-text);
       font-size: 1.5rem;
       cursor: pointer;
     }
 
     /* ==========================================================================
-       3. HERO SECTION
+       3. HERO SECTION WITH PURPLE-BLUE WAVE VIBES
        ========================================================================== */
     .hero-section {
-      padding: 100px 0 80px;
+      padding: 110px 0 90px;
       text-align: center;
       position: relative;
     }
@@ -359,7 +339,7 @@
 
     .hero-subtitle {
       font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-      color: var(--text-main);
+      color: var(--primary-text);
       font-weight: 600;
       margin-bottom: 16px;
     }
@@ -367,7 +347,7 @@
     .hero-desc {
       max-width: 720px;
       margin: 0 auto 36px;
-      color: var(--text-secondary);
+      color: var(--secondary-text);
       font-size: 1.05rem;
       line-height: 1.7;
     }
@@ -381,21 +361,21 @@
       margin-bottom: 60px;
     }
 
-    /* Animated Sentence to Tokens Preview */
+    /* Hero Token Flow Showcase */
     .hero-token-flow {
       max-width: 820px;
       margin: 0 auto 60px;
       padding: 24px;
-      background: rgba(16, 22, 41, 0.7);
+      background: rgba(16, 13, 32, 0.75);
       border-radius: 20px;
-      border: 1px solid rgba(0, 245, 255, 0.25);
-      box-shadow: 0 0 40px rgba(0, 245, 255, 0.1);
+      border: 1px solid var(--border-glow-purple);
+      box-shadow: 0 0 45px rgba(133, 44, 255, 0.15), 0 0 25px rgba(40, 123, 255, 0.1);
     }
 
     .flow-label {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--neon-cyan);
+      color: var(--light-blue);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 16px;
@@ -415,7 +395,7 @@
     .token-chip-demo {
       padding: 10px 16px;
       border-radius: 12px;
-      background: rgba(20, 27, 48, 0.9);
+      background: rgba(16, 13, 32, 0.9);
       border: 1px solid var(--border-subtle);
       font-family: var(--font-mono);
       font-size: 0.9rem;
@@ -425,19 +405,20 @@
     }
     .token-chip-demo:hover {
       transform: translateY(-4px);
-      border-color: var(--neon-cyan);
-      box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+      border-color: var(--light-blue);
+      box-shadow: 0 0 25px rgba(40, 123, 255, 0.4);
     }
     .token-chip-demo .prob-tag {
       position: absolute;
       top: -10px;
       right: -8px;
       background: var(--electric-blue);
-      color: #fff;
+      color: #FFFFFF;
       font-size: 0.65rem;
       padding: 2px 6px;
       border-radius: 6px;
       font-weight: 700;
+      box-shadow: 0 0 10px rgba(40, 123, 255, 0.4);
     }
 
     /* 3 Hero Feature Cards */
@@ -451,24 +432,25 @@
     .feature-card {
       padding: 24px;
       border-radius: 16px;
-      background: rgba(20, 27, 48, 0.6);
+      background: rgba(16, 13, 32, 0.75);
       border: 1px solid var(--border-subtle);
       transition: all 0.3s;
     }
     .feature-card:hover {
-      border-color: var(--neon-purple);
+      border-color: var(--bright-purple);
       transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(133, 44, 255, 0.2);
     }
     .feature-card h3 {
       font-size: 1.05rem;
       margin-bottom: 8px;
-      color: var(--text-main);
+      color: var(--primary-text);
       display: flex;
       align-items: center;
       gap: 10px;
     }
     .feature-card p {
-      color: var(--text-secondary);
+      color: var(--secondary-text);
       font-size: 0.88rem;
       line-height: 1.6;
     }
@@ -477,7 +459,7 @@
        4. SECTION 01: INPUT SENTENCE
        ========================================================================== */
     .section-wrap {
-      padding: 80px 0;
+      padding: 85px 0;
       border-top: 1px solid var(--border-subtle);
     }
 
@@ -489,7 +471,7 @@
       margin-bottom: 10px;
     }
     .section-header p {
-      color: var(--text-secondary);
+      color: var(--secondary-text);
       max-width: 680px;
       font-size: 1rem;
     }
@@ -504,19 +486,19 @@
       padding: 20px 24px;
       font-family: var(--font-body);
       font-size: 1.25rem;
-      background: rgba(16, 22, 41, 0.95);
-      border: 1.5px solid var(--border-cyan);
+      background: rgba(9, 8, 23, 0.95);
+      border: 1.5px solid var(--border-glow-purple);
       border-radius: 16px;
-      color: var(--text-main);
+      color: var(--primary-text);
       resize: vertical;
       min-height: 110px;
       outline: none;
       transition: all 0.25s ease;
-      box-shadow: 0 0 25px rgba(0, 245, 255, 0.1);
+      box-shadow: 0 0 25px rgba(133, 44, 255, 0.15);
     }
     .sentence-textarea:focus {
-      border-color: var(--neon-cyan);
-      box-shadow: 0 0 35px rgba(0, 245, 255, 0.25);
+      border-color: var(--light-blue);
+      box-shadow: 0 0 35px rgba(40, 123, 255, 0.35);
     }
 
     .sample-buttons-row {
@@ -527,9 +509,9 @@
       margin-bottom: 24px;
     }
     .sample-btn {
-      background: rgba(20, 27, 48, 0.8);
+      background: rgba(16, 13, 32, 0.9);
       border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
+      color: var(--secondary-text);
       padding: 8px 16px;
       border-radius: 10px;
       font-family: var(--font-mono);
@@ -538,18 +520,19 @@
       transition: all 0.2s;
     }
     .sample-btn:hover {
-      color: var(--neon-cyan);
-      border-color: var(--neon-cyan);
-      background: rgba(0, 245, 255, 0.08);
+      color: var(--light-blue);
+      border-color: var(--electric-blue);
+      background: rgba(40, 123, 255, 0.12);
+      box-shadow: 0 0 15px rgba(40, 123, 255, 0.2);
     }
 
     .model-callout {
       padding: 16px 20px;
       border-radius: 14px;
-      background: rgba(0, 245, 255, 0.05);
-      border: 1px solid rgba(0, 245, 255, 0.2);
+      background: rgba(133, 44, 255, 0.08);
+      border: 1px solid var(--border-glow-purple);
       font-size: 0.88rem;
-      color: var(--neon-cyan);
+      color: var(--bright-purple);
       margin-bottom: 24px;
       display: flex;
       align-items: center;
@@ -567,7 +550,7 @@
     }
     .progress-bar-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+      background: linear-gradient(90deg, var(--neon-purple), var(--electric-blue), var(--light-blue));
       width: 0%;
       transition: width 0.3s;
     }
@@ -585,20 +568,20 @@
     .token-chip-interactive {
       padding: 12px 18px;
       border-radius: 14px;
-      background: rgba(16, 22, 41, 0.9);
+      background: rgba(16, 13, 32, 0.9);
       border: 1.5px solid var(--border-subtle);
       cursor: pointer;
       transition: all 0.25s;
       position: relative;
     }
     .token-chip-interactive:hover, .token-chip-interactive.active {
-      border-color: var(--neon-cyan);
-      background: rgba(20, 27, 48, 1);
+      border-color: var(--light-blue);
+      background: rgba(22, 18, 44, 1);
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 245, 255, 0.2);
+      box-shadow: 0 8px 25px rgba(40, 123, 255, 0.3);
     }
-    .token-chip-interactive.high-prob { border-color: rgba(57, 255, 136, 0.4); }
-    .token-chip-interactive.low-prob { border-color: rgba(255, 60, 172, 0.4); }
+    .token-chip-interactive.high-prob { border-color: rgba(40, 123, 255, 0.55); box-shadow: 0 0 15px rgba(40, 123, 255, 0.2); }
+    .token-chip-interactive.low-prob { border-color: rgba(180, 76, 255, 0.55); box-shadow: 0 0 15px rgba(180, 76, 255, 0.2); }
 
     .token-chip-interactive .token-idx {
       font-family: var(--font-mono);
@@ -615,7 +598,7 @@
     .token-chip-interactive .token-prob {
       font-family: var(--font-mono);
       font-size: 0.8rem;
-      color: var(--electric-blue);
+      color: var(--light-blue);
       margin-top: 4px;
     }
 
@@ -630,13 +613,13 @@
       border-collapse: collapse;
       font-family: var(--font-mono);
       font-size: 0.88rem;
-      background: rgba(16, 22, 41, 0.6);
+      background: rgba(16, 13, 32, 0.7);
       text-align: left;
     }
     .neon-table th {
       padding: 16px 20px;
-      background: rgba(20, 27, 48, 0.9);
-      color: var(--text-secondary);
+      background: rgba(22, 18, 44, 0.95);
+      color: var(--secondary-text);
       border-bottom: 1px solid var(--border-subtle);
       text-transform: uppercase;
       font-size: 0.75rem;
@@ -644,11 +627,11 @@
     }
     .neon-table td {
       padding: 16px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      color: var(--text-main);
+      border-bottom: 1px solid rgba(133, 44, 255, 0.08);
+      color: var(--primary-text);
     }
     .neon-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(133, 44, 255, 0.06);
       cursor: pointer;
     }
 
@@ -666,11 +649,11 @@
     .mini-prob-bar-fill {
       height: 100%;
       border-radius: 4px;
-      background: linear-gradient(90deg, var(--neon-cyan), var(--electric-blue));
+      background: linear-gradient(90deg, var(--neon-purple), var(--electric-blue), var(--light-blue));
       transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .fill-high { background: linear-gradient(90deg, #39FF88, #00F5FF); }
-    .fill-low { background: linear-gradient(90deg, #FF3366, #FF3CAC); }
+    .fill-high { background: linear-gradient(90deg, var(--electric-blue), var(--light-blue)); }
+    .fill-low { background: linear-gradient(90deg, #5A1BB3, var(--neon-purple)); }
 
     /* ==========================================================================
        6. SECTION 03: CALCULATE PERPLEXITY
@@ -685,14 +668,14 @@
     .calc-step-card {
       padding: 24px;
       border-radius: 16px;
-      background: rgba(20, 27, 48, 0.7);
+      background: rgba(16, 13, 32, 0.8);
       border: 1px solid var(--border-subtle);
       position: relative;
     }
     .calc-step-card .step-num {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--neon-purple);
+      color: var(--bright-purple);
       font-weight: 700;
       margin-bottom: 8px;
     }
@@ -704,19 +687,19 @@
       font-family: var(--font-mono);
       font-size: 0.95rem;
       padding: 12px 14px;
-      background: rgba(10, 14, 28, 0.8);
+      background: rgba(9, 8, 23, 0.9);
       border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      color: var(--neon-cyan);
+      border: 1px solid rgba(133, 44, 255, 0.15);
+      color: var(--light-blue);
       word-break: break-all;
     }
 
     .master-ppl-result-card {
       padding: 40px;
       border-radius: 20px;
-      background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15) 0%, rgba(20, 27, 48, 0.9) 100%);
-      border: 1.5px solid var(--border-purple);
-      box-shadow: 0 0 50px rgba(168, 85, 247, 0.25);
+      background: radial-gradient(circle at 50% 50%, rgba(133, 44, 255, 0.22) 0%, rgba(16, 13, 32, 0.95) 100%);
+      border: 1.5px solid var(--border-glow-purple);
+      box-shadow: 0 0 50px rgba(133, 44, 255, 0.3), 0 0 25px rgba(40, 123, 255, 0.2);
       text-align: center;
       margin-bottom: 32px;
     }
@@ -726,7 +709,7 @@
       font-size: clamp(3.2rem, 7vw, 5.5rem);
       font-weight: 800;
       color: #fff;
-      text-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+      text-shadow: 0 0 35px rgba(180, 76, 255, 0.6);
       line-height: 1;
       margin: 16px 0;
     }
@@ -738,7 +721,7 @@
     .ppl-meter-bar {
       height: 10px;
       border-radius: 5px;
-      background: linear-gradient(90deg, #39FF88 0%, #00F5FF 25%, #A855F7 60%, #FF3366 100%);
+      background: linear-gradient(90deg, var(--light-blue) 0%, var(--electric-blue) 35%, var(--neon-purple) 70%, var(--bright-purple) 100%);
       position: relative;
     }
     .ppl-needle {
@@ -748,7 +731,7 @@
       height: 22px;
       border-radius: 2px;
       background: #fff;
-      box-shadow: 0 0 10px #fff;
+      box-shadow: 0 0 10px var(--light-blue);
       transition: left 0.5s ease;
     }
 
@@ -764,14 +747,14 @@
     .pred-token-card {
       padding: 18px 20px;
       border-radius: 14px;
-      background: rgba(20, 27, 48, 0.8);
+      background: rgba(16, 13, 32, 0.85);
       border: 1px solid var(--border-subtle);
       transition: all 0.2s;
     }
     .pred-token-card.rank-1 {
-      border-color: var(--neon-cyan);
-      background: rgba(0, 245, 255, 0.05);
-      box-shadow: 0 0 25px rgba(0, 245, 255, 0.15);
+      border-color: var(--light-blue);
+      background: rgba(40, 123, 255, 0.08);
+      box-shadow: 0 0 30px rgba(40, 123, 255, 0.25);
     }
     .pred-header {
       display: flex;
@@ -786,12 +769,12 @@
       color: var(--text-muted);
     }
     .pred-token-card.rank-1 .pred-rank {
-      color: var(--neon-cyan);
+      color: var(--light-blue);
     }
     .pred-pct {
       font-family: var(--font-mono);
       font-weight: 700;
-      color: var(--neon-cyan);
+      color: var(--light-blue);
       font-size: 0.95rem;
     }
     .pred-name {
@@ -806,9 +789,9 @@
        8. SECTION 05: SIMULATED CALCULATOR
        ========================================================================== */
     .sim-banner {
-      background: rgba(255, 60, 172, 0.1);
-      border: 1px solid var(--border-pink);
-      color: var(--hot-pink);
+      background: rgba(133, 44, 255, 0.1);
+      border: 1px solid var(--border-glow-purple);
+      color: var(--bright-purple);
       padding: 12px 20px;
       border-radius: 12px;
       font-family: var(--font-mono);
@@ -830,17 +813,18 @@
     .preset-btn {
       padding: 14px 16px;
       border-radius: 12px;
-      background: rgba(20, 27, 48, 0.7);
+      background: rgba(16, 13, 32, 0.8);
       border: 1px solid var(--border-subtle);
-      color: var(--text-main);
+      color: var(--primary-text);
       text-align: left;
       cursor: pointer;
       transition: all 0.2s;
     }
     .preset-btn:hover {
-      border-color: var(--hot-pink);
-      background: rgba(255, 60, 172, 0.08);
+      border-color: var(--bright-purple);
+      background: rgba(133, 44, 255, 0.1);
       transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(133, 44, 255, 0.25);
     }
     .preset-btn strong {
       display: block;
@@ -850,7 +834,7 @@
     .preset-btn span {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--text-secondary);
+      color: var(--secondary-text);
     }
 
     .sim-table-row {
@@ -860,21 +844,22 @@
       align-items: center;
       padding: 12px 16px;
       border-radius: 10px;
-      background: rgba(16, 22, 41, 0.7);
+      background: rgba(9, 8, 23, 0.8);
       margin-bottom: 8px;
     }
     .sim-input {
-      background: rgba(10, 14, 28, 0.9);
+      background: rgba(16, 13, 32, 0.95);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 8px 12px;
-      color: var(--text-main);
+      color: var(--primary-text);
       font-family: var(--font-mono);
       font-size: 0.9rem;
       outline: none;
     }
     .sim-input:focus {
-      border-color: var(--hot-pink);
+      border-color: var(--bright-purple);
+      box-shadow: 0 0 10px rgba(180, 76, 255, 0.3);
     }
     .btn-delete-row {
       background: transparent;
@@ -885,7 +870,7 @@
       transition: color 0.2s;
     }
     .btn-delete-row:hover {
-      color: var(--neon-red);
+      color: var(--bright-purple);
     }
 
     /* Range slider styling */
@@ -903,9 +888,9 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: var(--hot-pink);
+      background: var(--bright-purple);
       cursor: pointer;
-      box-shadow: 0 0 10px var(--hot-pink);
+      box-shadow: 0 0 12px var(--bright-purple);
     }
 
     /* ==========================================================================
@@ -920,30 +905,30 @@
     .visual-comp-card {
       padding: 20px;
       border-radius: 14px;
-      background: rgba(20, 27, 48, 0.7);
+      background: rgba(16, 13, 32, 0.8);
       border: 1px solid var(--border-subtle);
       text-align: center;
     }
     .visual-comp-card .p-val {
       font-family: var(--font-mono);
       font-size: 1.25rem;
-      color: var(--neon-cyan);
+      color: var(--light-blue);
       font-weight: 700;
     }
     .visual-comp-card .ppl-val {
       font-family: var(--font-heading);
       font-size: 2.2rem;
       font-weight: 800;
-      color: var(--hot-pink);
+      color: var(--bright-purple);
       margin: 8px 0;
     }
     .visual-comp-card p {
       font-size: 0.8rem;
-      color: var(--text-secondary);
+      color: var(--secondary-text);
     }
 
     /* ==========================================================================
-       10. SECTION 07: CHALLENGE QUIZ
+       10. SECTION 07: CHALLENGE QUIZ (PURPLE-BLUE PALETTE)
        ========================================================================== */
     .quiz-card {
       max-width: 800px;
@@ -958,7 +943,7 @@
     }
     .quiz-progress-fill {
       height: 100%;
-      background: var(--neon-green);
+      background: linear-gradient(90deg, var(--neon-purple), var(--electric-blue));
       transition: width 0.3s;
     }
     .quiz-question-title {
@@ -975,9 +960,9 @@
     .quiz-option-btn {
       padding: 16px 20px;
       border-radius: 12px;
-      background: rgba(16, 22, 41, 0.8);
+      background: rgba(16, 13, 32, 0.85);
       border: 1.5px solid var(--border-subtle);
-      color: var(--text-main);
+      color: var(--primary-text);
       text-align: left;
       font-size: 0.95rem;
       cursor: pointer;
@@ -987,19 +972,20 @@
       gap: 14px;
     }
     .quiz-option-btn:hover {
-      border-color: var(--neon-green);
-      background: rgba(57, 255, 136, 0.05);
+      border-color: var(--light-blue);
+      background: rgba(40, 123, 255, 0.08);
     }
     .quiz-option-btn.correct {
-      border-color: var(--neon-green);
-      background: rgba(57, 255, 136, 0.15);
-      color: var(--neon-green);
+      border-color: var(--light-blue);
+      background: rgba(40, 123, 255, 0.18);
+      color: var(--light-blue);
       font-weight: 600;
+      box-shadow: 0 0 20px rgba(40, 123, 255, 0.25);
     }
     .quiz-option-btn.incorrect {
-      border-color: var(--neon-red);
-      background: rgba(255, 51, 102, 0.15);
-      color: var(--neon-red);
+      border-color: rgba(180, 76, 255, 0.5);
+      background: rgba(133, 44, 255, 0.15);
+      color: var(--secondary-text);
     }
     .quiz-option-letter {
       width: 28px;
@@ -1017,8 +1003,8 @@
     .quiz-feedback {
       padding: 16px 20px;
       border-radius: 12px;
-      background: rgba(16, 22, 41, 0.9);
-      border: 1px solid var(--border-subtle);
+      background: rgba(16, 13, 32, 0.95);
+      border: 1px solid var(--border-glow-blue);
       margin-bottom: 24px;
       font-size: 0.9rem;
       line-height: 1.6;
@@ -1035,14 +1021,14 @@
     }
     .accordion-item {
       border-radius: 16px;
-      background: rgba(20, 27, 48, 0.6);
+      background: rgba(16, 13, 32, 0.7);
       border: 1px solid var(--border-subtle);
       overflow: hidden;
       transition: all 0.3s;
     }
     .accordion-item.open {
-      border-color: var(--border-cyan);
-      box-shadow: 0 0 25px rgba(0, 245, 255, 0.1);
+      border-color: var(--border-glow-purple);
+      box-shadow: 0 0 25px rgba(133, 44, 255, 0.18);
     }
     .accordion-header {
       padding: 22px 28px;
@@ -1058,7 +1044,7 @@
     }
     .accordion-icon {
       font-size: 1.2rem;
-      color: var(--neon-cyan);
+      color: var(--bright-purple);
       transition: transform 0.3s;
     }
     .accordion-item.open .accordion-icon {
@@ -1066,7 +1052,7 @@
     }
     .accordion-content {
       padding: 0 28px 24px;
-      color: var(--text-secondary);
+      color: var(--secondary-text);
       font-size: 0.95rem;
       line-height: 1.7;
       display: none;
@@ -1081,16 +1067,16 @@
       gap: 16px;
       margin-top: 16px;
       padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(133, 44, 255, 0.12);
     }
     .concept-meta-box {
-      background: rgba(10, 14, 28, 0.6);
+      background: rgba(9, 8, 23, 0.75);
       padding: 12px 16px;
       border-radius: 10px;
     }
     .concept-meta-box strong {
       display: block;
-      color: var(--neon-cyan);
+      color: var(--light-blue);
       font-size: 0.8rem;
       text-transform: uppercase;
       margin-bottom: 4px;
@@ -1104,8 +1090,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(8, 11, 22, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(5, 3, 13, 0.88);
+      backdrop-filter: blur(12px);
       z-index: 200;
       display: none;
       align-items: center;
@@ -1119,10 +1105,10 @@
       max-width: 520px;
       width: 100%;
       background: var(--bg-card);
-      border: 1.5px solid var(--border-cyan);
+      border: 1.5px solid var(--border-glow-purple);
       border-radius: 20px;
       padding: 32px;
-      box-shadow: 0 0 50px rgba(0, 245, 255, 0.3);
+      box-shadow: 0 0 50px rgba(133, 44, 255, 0.35);
       position: relative;
     }
     .modal-close {
@@ -1154,14 +1140,14 @@
       width: 44px;
       height: 44px;
       border-radius: 12px;
-      background: rgba(20, 27, 48, 0.9);
-      border: 1px solid var(--border-cyan);
-      color: var(--neon-cyan);
+      background: rgba(16, 13, 32, 0.92);
+      border: 1px solid var(--border-glow-purple);
+      color: var(--light-blue);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+      box-shadow: 0 0 20px rgba(133, 44, 255, 0.3);
       z-index: 50;
       opacity: 0;
       pointer-events: none;
@@ -1180,7 +1166,7 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(8, 11, 22, 0.98);
+        background: rgba(9, 8, 23, 0.98);
         padding: 20px;
         flex-direction: column;
         border-bottom: 1px solid var(--border-subtle);
@@ -1201,12 +1187,12 @@
 </head>
 <body>
 
-  <!-- Ambient Glows -->
+  <!-- Atmospheric Ambient Glows -->
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
   <div class="ambient-glow glow-3"></div>
 
-  <!-- Background Particle / Neural Canvas -->
+  <!-- Animated Glowing Purple-Blue Waves Canvas -->
   <canvas id="bg-canvas"></canvas>
 
   <!-- Sticky Navbar -->
@@ -1248,7 +1234,7 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="hero-section">
-      <div class="section-badge badge-cyan">Cyberpunk AI Learning Laboratory</div>
+      <div class="section-badge">Neon Purple & Electric Blue AI Laboratory</div>
       <h1 class="hero-title">
         PERPLEXITY <span class="gradient-text">EXPLORER</span>
       </h1>
@@ -1269,7 +1255,7 @@
       <div class="hero-token-flow">
         <div class="flow-label">
           <span>Neural Tokenization Stream</span>
-          <span style="color: var(--neon-purple);">DistilGPT-2 Causal Context</span>
+          <span style="color: var(--bright-purple);">DistilGPT-2 Causal Context</span>
         </div>
         <div class="flow-tokens">
           <div class="token-chip-demo">
@@ -1286,11 +1272,11 @@
           </div>
           <div class="token-chip-demo">
             ␣Python
-            <span class="prob-tag" style="background: var(--hot-pink);">P=0.01%</span>
+            <span class="prob-tag" style="background: var(--bright-purple);">P=0.01%</span>
           </div>
-          <div class="token-chip-demo" style="border-style: dashed; border-color: var(--neon-cyan);">
+          <div class="token-chip-demo" style="border-style: dashed; border-color: var(--light-blue);">
             ␣and... ?
-            <span class="prob-tag" style="background: var(--neon-cyan); color:#080B16;">NEXT</span>
+            <span class="prob-tag" style="background: var(--light-blue); color:#05030D;">NEXT</span>
           </div>
         </div>
       </div>
@@ -1298,7 +1284,7 @@
       <!-- 3 Feature Cards -->
       <div class="hero-features">
         <div class="feature-card">
-          <h3><span style="color: var(--neon-cyan);">⚙️</span> REAL AI PREDICTIONS</h3>
+          <h3><span style="color: var(--light-blue);">⚙️</span> REAL AI PREDICTIONS</h3>
           <p>Runs actual DistilGPT-2 ONNX inference locally inside your browser via Transformers.js. No simulated or randomized numbers.</p>
         </div>
         <div class="feature-card">
@@ -1306,7 +1292,7 @@
           <p>Calculates genuine softmax distributions across all 50,257 vocabulary tokens conditioned on preceding context.</p>
         </div>
         <div class="feature-card">
-          <h3><span style="color: var(--hot-pink);">🧪</span> INTERACTIVE EXPERIMENTS</h3>
+          <h3><span style="color: var(--bright-purple);">🧪</span> INTERACTIVE EXPERIMENTS</h3>
           <p>Hands-on sandbox to manually alter probabilities, explore edge cases, and discover why All 1/8 equals exactly 8.00.</p>
         </div>
       </div>
@@ -1316,13 +1302,13 @@
     <!-- SECTION 01: TYPE A SENTENCE -->
     <section id="sec-analyze" class="section-wrap">
       <div class="section-header">
-        <div class="section-badge badge-cyan">Section 01</div>
+        <div class="section-badge badge-blue">Section 01</div>
         <h2>01. LET'S SEE WHAT THE AI THINKS</h2>
         <p>The model reads your sentence one token at a time. For each token, it estimates how likely that token was based on the tokens before it.</p>
       </div>
 
-      <div class="glass-card glow-cyan">
-        <label for="sentence-input" style="display:block; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">
+      <div class="glass-card glow-purple">
+        <label for="sentence-input" style="display:block; font-family: var(--font-mono); font-size: 0.85rem; color: var(--secondary-text); margin-bottom: 8px;">
           ENTER A SENTENCE TO EVALUATE:
         </label>
         
@@ -1350,7 +1336,7 @@
         </div>
 
         <!-- Error Box -->
-        <div id="error-box" style="display: none; padding: 16px; border-radius: 12px; background: rgba(255, 51, 102, 0.15); border: 1px solid var(--neon-red); color: var(--neon-red); margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.85rem;"></div>
+        <div id="error-box" style="display: none; padding: 16px; border-radius: 12px; background: rgba(133, 44, 255, 0.15); border: 1px solid var(--neon-purple); color: var(--primary-text); margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.85rem;"></div>
 
         <!-- Main Button -->
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
@@ -1370,7 +1356,7 @@
       <div class="section-header">
         <div class="section-badge badge-blue">Section 02</div>
         <h2>02. EVERY TOKEN HAS A PROBABILITY</h2>
-        <p>Explore the sentence broken down into subword tokens. Spaces are displayed as <code style="color: var(--neon-cyan);">␣</code> to show exact tokenization boundaries.</p>
+        <p>Explore the sentence broken down into subword tokens. Spaces are displayed as <code style="color: var(--light-blue);">␣</code> to show exact tokenization boundaries.</p>
       </div>
 
       <!-- Interactive Token Chips -->
@@ -1404,7 +1390,7 @@
     <!-- SECTION 03: CALCULATE PERPLEXITY -->
     <section id="sec-calculator" class="section-wrap">
       <div class="section-header">
-        <div class="section-badge badge-purple">Section 03</div>
+        <div class="section-badge">Section 03</div>
         <h2>03. LET'S CALCULATE PERPLEXITY</h2>
         <p>Deconstruct the mathematical formula step by step. Watch how raw token probabilities are inverted, multiplied, and rooted.</p>
       </div>
@@ -1414,7 +1400,7 @@
         <div class="calc-step-card">
           <div class="step-num">STEP 01</div>
           <h4>Multiply Inverse Probabilities</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px;">
+          <p style="color: var(--secondary-text); font-size: 0.85rem; margin-bottom: 12px;">
             Calculate 1/P for each token and take their cumulative product:
           </p>
           <div class="math-expression" id="math-step-1">
@@ -1425,7 +1411,7 @@
         <div class="calc-step-card">
           <div class="step-num">STEP 02</div>
           <h4>Count the Tokens</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px;">
+          <p style="color: var(--secondary-text); font-size: 0.85rem; margin-bottom: 12px;">
             Total evaluated tokens in the sequence:
           </p>
           <div class="math-expression" id="math-step-2">
@@ -1436,7 +1422,7 @@
         <div class="calc-step-card">
           <div class="step-num">STEP 03</div>
           <h4>Compute the Geometric Root</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px;">
+          <p style="color: var(--secondary-text); font-size: 0.85rem; margin-bottom: 12px;">
             Take the N-th root of the inverse product:
           </p>
           <div class="math-expression" id="math-step-3">
@@ -1447,11 +1433,11 @@
 
       <!-- Master Glowing Perplexity Card -->
       <div class="master-ppl-result-card">
-        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--neon-purple); letter-spacing: 0.1em; text-transform: uppercase;">
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--bright-purple); letter-spacing: 0.1em; text-transform: uppercase;">
           Sentence Perplexity Score
         </div>
         <div class="ppl-big-number" id="ppl-display">501.92</div>
-        <div style="color: var(--text-secondary); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
+        <div style="color: var(--secondary-text); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
           "Perplexity tells us how uncertain the model was, on average, when predicting the actual tokens."
         </div>
 
@@ -1466,12 +1452,12 @@
           </div>
         </div>
 
-        <div style="margin-top: 24px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--neon-cyan);" id="log-formula-note">
+        <div style="margin-top: 24px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--light-blue);" id="log-formula-note">
           Equivalent log-loss: PPL = exp(-1/N ∑ ln P) = exp(6.218)
         </div>
       </div>
 
-      <div style="background: rgba(20, 27, 48, 0.6); padding: 20px; border-radius: 14px; border: 1px solid var(--border-subtle); font-size: 0.85rem; color: var(--text-secondary);">
+      <div style="background: rgba(16, 13, 32, 0.75); padding: 20px; border-radius: 14px; border: 1px solid var(--border-subtle); font-size: 0.85rem; color: var(--secondary-text);">
         💡 <strong>Fair Evaluation Rule:</strong> Perplexity scores are only meaningful when comparing models evaluated on the exact same dataset and identical tokenization vocabulary.
       </div>
     </section>
@@ -1480,7 +1466,7 @@
     <!-- SECTION 04: WHAT DOES THE MODEL PREDICT NEXT? -->
     <section id="sec-next" class="section-wrap">
       <div class="section-header">
-        <div class="section-badge badge-cyan">Section 04</div>
+        <div class="section-badge badge-blue">Section 04</div>
         <h2>04. WHAT'S THE AI THINKING NEXT?</h2>
         <p>Based on everything it has read so far, the model predicts which token is most likely to come next. Here are the top 8 candidate tokens extracted from the model's final logits.</p>
       </div>
@@ -1494,13 +1480,13 @@
     <!-- SECTION 05: TRY IT BY HAND (SIMULATED SANDBOX) -->
     <section id="sec-experiments" class="section-wrap">
       <div class="section-header">
-        <div class="section-badge badge-pink">Section 05</div>
+        <div class="section-badge">Section 05</div>
         <h2>05. BECOME THE AI. PREDICT IT YOURSELF!</h2>
         <p>Take the wheel! Assign your own token probabilities, adjust sliders, and watch the perplexity calculation react immediately.</p>
       </div>
 
       <div class="sim-banner">
-        ⚠️ SIMULATED – NOT FROM THE MODEL
+        ⚡ SIMULATED – NOT FROM THE MODEL
       </div>
 
       <!-- Presets -->
@@ -1524,10 +1510,10 @@
       </div>
 
       <!-- Interactive Simulation Table -->
-      <div class="glass-card glow-pink">
+      <div class="glass-card glow-purple">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <h3 style="font-size: 1.15rem;">Custom Token Probabilities Table</h3>
-          <button id="btn-add-sim-token" class="btn btn-sm btn-neon-secondary" style="border-color: var(--hot-pink); color: var(--hot-pink);">
+          <button id="btn-add-sim-token" class="btn btn-sm btn-neon-secondary">
             + Add Token
           </button>
         </div>
@@ -1540,19 +1526,19 @@
         <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border-subtle); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; align-items: center;">
           <div>
             <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px;">PRODUCT OF INVERSES</div>
-            <div id="sim-product-disp" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--neon-cyan);">12.50</div>
+            <div id="sim-product-disp" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--light-blue);">12.50</div>
           </div>
           <div>
             <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px;">POWER (1/N)</div>
-            <div id="sim-power-disp" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--neon-purple);">N = 3 tokens</div>
+            <div id="sim-power-disp" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--bright-purple);">N = 3 tokens</div>
           </div>
           <div style="text-align: right;">
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--hot-pink); margin-bottom: 4px;">SIMULATED PERPLEXITY</div>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--bright-purple); margin-bottom: 4px;">SIMULATED PERPLEXITY</div>
             <div id="sim-ppl-result" style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: #fff;">2.32</div>
           </div>
         </div>
 
-        <div id="sim-callout-explanation" style="margin-top: 20px; padding: 14px 18px; border-radius: 12px; background: rgba(255, 60, 172, 0.08); border: 1px solid rgba(255, 60, 172, 0.2); font-size: 0.85rem; color: var(--text-main);">
+        <div id="sim-callout-explanation" style="margin-top: 20px; padding: 14px 18px; border-radius: 12px; background: rgba(133, 44, 255, 0.08); border: 1px solid var(--border-glow-purple); font-size: 0.85rem; color: var(--primary-text);">
           💡 <strong>Experiment Insight:</strong> When each token has P = 0.5, 0.8, and 0.2, the inverse product is (2 × 1.25 × 5) = 12.5. The cube root (12.5)^(1/3) gives approximately <strong>2.32</strong>.
         </div>
       </div>
@@ -1562,7 +1548,7 @@
     <!-- SECTION 06: UNDERSTAND PERPLEXITY VISUALLY -->
     <section id="sec-visual" class="section-wrap">
       <div class="section-header">
-        <div class="section-badge badge-cyan">Section 06</div>
+        <div class="section-badge badge-blue">Section 06</div>
         <h2>06. SEE HOW UNCERTAINTY CHANGES</h2>
         <p>If every token has the same probability, perplexity is simply the inverse of that probability. See how uncertainty scales visually.</p>
       </div>
@@ -1591,25 +1577,25 @@
       </div>
 
       <!-- Live Slider -->
-      <div class="glass-card">
+      <div class="glass-card glow-blue">
         <h3 style="margin-bottom: 12px;">Interactive Uncertainty Slider</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">
+        <p style="color: var(--secondary-text); font-size: 0.9rem; margin-bottom: 24px;">
           Drag the slider to adjust the uniform token probability and see how the branching factor changes.
         </p>
 
         <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px;">
           <input type="range" id="visual-slider" min="0.01" max="1.0" step="0.01" value="0.25" style="flex: 1;">
-          <div style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--neon-cyan); min-width: 140px;">
+          <div style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--light-blue); min-width: 140px;">
             P = <span id="visual-slider-p">0.25</span>
           </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; border-radius: 12px; background: rgba(16, 22, 41, 0.8);">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; border-radius: 12px; background: rgba(9, 8, 23, 0.85);">
           <div>
             <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);">CALCULATED PERPLEXITY (1/P)</div>
-            <div id="visual-slider-ppl" style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--neon-green);">4.00</div>
+            <div id="visual-slider-ppl" style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--light-blue);">4.00</div>
           </div>
-          <div style="text-align: right; max-width: 380px; font-size: 0.85rem; color: var(--text-secondary);">
+          <div style="text-align: right; max-width: 380px; font-size: 0.85rem; color: var(--secondary-text);">
             The model is as uncertain as picking blindly among <strong id="visual-slider-choices" style="color: #fff;">4</strong> equally likely candidate tokens!
           </div>
         </div>
@@ -1620,16 +1606,16 @@
     <!-- SECTION 07: CHALLENGE YOURSELF (QUIZ) -->
     <section id="sec-quiz" class="section-wrap">
       <div class="section-header" style="text-align: center;">
-        <div class="section-badge badge-green">Section 07</div>
+        <div class="section-badge">Section 07</div>
         <h2>07. CAN YOU THINK LIKE AN AI?</h2>
         <p style="margin: 0 auto;">Test your mastery of token probabilities, perplexity formulas, and language model mechanics.</p>
       </div>
 
-      <div class="glass-card glow-green quiz-card">
+      <div class="glass-card glow-purple quiz-card">
         <!-- Progress Bar -->
         <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">
           <span id="quiz-progress-text">Question 1 of 8</span>
-          <span>Score: <strong id="quiz-score" style="color: var(--neon-green);">0</strong> / 8</span>
+          <span>Score: <strong id="quiz-score" style="color: var(--light-blue);">0</strong> / 8</span>
         </div>
         <div class="quiz-progress-bar">
           <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 12.5%;"></div>
@@ -1658,7 +1644,7 @@
     <!-- SECTION 08: LEARN CONCEPTS (ACCORDION) -->
     <section id="sec-learn" class="section-wrap">
       <div class="section-header">
-        <div class="section-badge badge-purple">Section 08</div>
+        <div class="section-badge badge-blue">Section 08</div>
         <h2>08. LEARN THE LANGUAGE OF AI</h2>
         <p>Clear, beginner-friendly explanations of the core building blocks behind modern language models.</p>
       </div>
@@ -1840,25 +1826,25 @@
   <div class="modal-backdrop" id="token-modal">
     <div class="modal-box">
       <button class="modal-close" id="modal-close-btn">&times;</button>
-      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--neon-cyan); text-transform: uppercase; margin-bottom: 8px;">
+      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--bright-purple); text-transform: uppercase; margin-bottom: 8px;">
         Token Inspector
       </div>
       <h3 id="modal-token-title" style="font-size: 1.8rem; margin-bottom: 16px; font-family: var(--font-mono);">␣Python</h3>
       
-      <div style="background: rgba(10, 14, 28, 0.7); padding: 16px; border-radius: 12px; font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.8;">
-        <div><strong>Token ID:</strong> <span id="modal-token-id" style="color: var(--neon-cyan);">11361</span></div>
+      <div style="background: rgba(9, 8, 23, 0.85); padding: 16px; border-radius: 12px; font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.8;">
+        <div><strong>Token ID:</strong> <span id="modal-token-id" style="color: var(--light-blue);">11361</span></div>
         <div><strong>Probability (P):</strong> <span id="modal-token-prob" style="color: var(--electric-blue);">0.0061%</span></div>
-        <div><strong>Inverse (1/P):</strong> <span id="modal-token-inv" style="color: var(--hot-pink);">16402.5</span></div>
+        <div><strong>Inverse (1/P):</strong> <span id="modal-token-inv" style="color: var(--bright-purple);">16402.5</span></div>
       </div>
 
-      <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+      <div style="font-size: 0.88rem; color: var(--secondary-text); line-height: 1.6; margin-bottom: 16px;">
         <strong style="color: #fff; display: block; margin-bottom: 4px;">Context Seen Before This Token:</strong>
-        <div id="modal-token-ctx" style="background: rgba(16, 22, 41, 0.9); padding: 10px 14px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-main); word-break: break-all;">
+        <div id="modal-token-ctx" style="background: rgba(16, 13, 32, 0.95); padding: 10px 14px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary-text); word-break: break-all;">
           [BOS] I love
         </div>
       </div>
 
-      <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+      <div style="font-size: 0.88rem; color: var(--secondary-text); line-height: 1.6;">
         <strong style="color: #fff; display: block; margin-bottom: 4px;">Why Did the Model Assign This Probability?</strong>
         <p id="modal-token-explanation">
           The model evaluated this token strictly given its preceding context.
@@ -1873,14 +1859,14 @@
   <!-- Footer -->
   <footer>
     <div class="app-container">
-      <div style="margin-bottom: 12px; font-weight: 600; color: var(--text-main);">
+      <div style="margin-bottom: 12px; font-weight: 600; color: var(--primary-text);">
         PERPLEXITY EXPLORER – Inside the Mind of an AI Language Model
       </div>
       <p style="margin-bottom: 8px;">
-        Designed for students & AI learners. Real inference powered by <strong>DistilGPT-2</strong> via <span style="color: var(--neon-cyan);">Transformers.js</span>.
+        Designed for students & AI learners. Real inference powered by <strong>DistilGPT-2</strong> via <span style="color: var(--light-blue);">Transformers.js</span>.
       </p>
       <p style="font-size: 0.75rem; color: var(--text-muted);">
-        Single standalone HTML file • No external build tools required • Educational AI Sandbox
+        Single standalone HTML file • Deep midnight black, neon purple & electric blue visual identity • Educational AI Sandbox
       </p>
     </div>
   </footer>
@@ -2180,7 +2166,7 @@
       // 1. Render Section 02 Chips
       const chipsContainer = document.getElementById('tokens-chips-container');
       chipsContainer.innerHTML = '';
-      tokens.forEach((t, idx) => {
+      tokens.forEach((t) => {
         const chip = document.createElement('div');
         const probPct = (t.probability * 100).toFixed(2);
         chip.className = `token-chip-interactive ${t.probability > 0.15 ? 'high-prob' : t.probability < 0.01 ? 'low-prob' : ''}`;
@@ -2202,10 +2188,10 @@
         const fillClass = t.probability > 0.15 ? 'fill-high' : t.probability < 0.01 ? 'fill-low' : '';
         row.innerHTML = `
           <td style="color: var(--text-muted);">${t.index}</td>
-          <td><strong style="color: var(--neon-cyan);">${escapeHtml(t.displaySymbol)}</strong></td>
-          <td style="color: var(--text-secondary);">${t.tokenId}</td>
+          <td><strong style="color: var(--light-blue);">${escapeHtml(t.displaySymbol)}</strong></td>
+          <td style="color: var(--secondary-text);">${t.tokenId}</td>
           <td><span style="color: var(--electric-blue); font-weight: 600;">${probPct}%</span></td>
-          <td style="color: var(--hot-pink); font-weight: 600;">${t.inverseProbability.toFixed(1)}</td>
+          <td style="color: var(--bright-purple); font-weight: 600;">${t.inverseProbability.toFixed(1)}</td>
           <td class="prob-bar-cell">
             <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
               <span>0%</span><span>${probPct}%</span>
@@ -2229,9 +2215,8 @@
       document.getElementById('ppl-display').textContent = pplNum;
       document.getElementById('log-formula-note').textContent = `Equivalent log-loss: PPL = exp(-1/N ∑ ln P) = exp(${data.crossEntropy.toFixed(3)}) = ${pplNum}`;
 
-      // Meter Needle
+      // Meter Needle (Scale: 1 -> 5%, 500 -> 50%, 8000 -> 95%)
       const needle = document.getElementById('ppl-meter-needle');
-      // Scale: 1 -> 5%, 500 -> 50%, 8000 -> 95%
       let pct = 5;
       if (data.perplexity < 20) pct = 10;
       else if (data.perplexity < 100) pct = 25;
@@ -2340,7 +2325,7 @@
             <input type="range" min="0.01" max="1.0" step="0.01" value="${t.prob}" class="sim-slider" data-idx="${i}">
             <input type="number" min="0.001" max="1.0" step="0.01" value="${t.prob}" class="sim-input sim-prob-num" data-idx="${i}" style="width: 75px;">
           </div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--hot-pink);">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--bright-purple);">
             1/P = ${inv.toFixed(1)}
           </div>
           <button class="btn-delete-row" data-idx="${i}" title="Delete token">×</button>
@@ -2398,7 +2383,7 @@
       renderSimTable();
     });
 
-    // Preset buttons
+    // Presets
     document.getElementById('preset-a').addEventListener('click', () => {
       simTokens = [
         { id: 1, text: "I", prob: 0.5 },
@@ -2605,14 +2590,14 @@
         quizScore++;
         qScoreDisp.textContent = quizScore;
         qFeedback.style.display = 'block';
-        qFeedback.style.borderColor = 'var(--neon-green)';
-        qFeedback.innerHTML = `<strong style="color: var(--neon-green);">✓ Correct!</strong> ${qObj.explanation}`;
+        qFeedback.style.borderColor = 'var(--electric-blue)';
+        qFeedback.innerHTML = `<strong style="color: var(--light-blue);">✓ Correct!</strong> ${qObj.explanation}`;
       } else {
         clickedBtn.classList.add('incorrect');
         allBtns[qObj.correct].classList.add('correct');
         qFeedback.style.display = 'block';
-        qFeedback.style.borderColor = 'var(--neon-red)';
-        qFeedback.innerHTML = `<strong style="color: var(--neon-red);">✗ Incorrect.</strong> ${qObj.explanation}`;
+        qFeedback.style.borderColor = 'var(--neon-purple)';
+        qFeedback.innerHTML = `<strong style="color: var(--bright-purple);">Incorrect.</strong> ${qObj.explanation}`;
       }
 
       btnNext.style.display = 'inline-flex';
@@ -2628,10 +2613,9 @@
         currentQIdx++;
         renderQuestion();
       } else {
-        // Finished
         qText.textContent = `Challenge Complete! You scored ${quizScore} out of ${QUIZ_DATA.length}!`;
         qOptions.innerHTML = `
-          <div style="padding: 24px; text-align: center; font-size: 1.1rem; color: var(--text-main);">
+          <div style="padding: 24px; text-align: center; font-size: 1.1rem; color: var(--primary-text);">
             ${quizScore >= 7 ? '🏆 Outstanding! You have mastered token prediction and perplexity mathematics!' : '💡 Great effort! Review the sections above to solidify your intuition.'}
           </div>
         `;
@@ -2662,7 +2646,8 @@
 
 
     /* ==========================================================================
-       H. BACKGROUND PARTICLE CANVAS ANIMATION
+       H. ANIMATED PURPLE-BLUE NEON WAVE LANDSCAPE
+       Inspired by reference image: layered flowing waves + glowing particle dust
        ========================================================================== */
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
@@ -2674,61 +2659,102 @@
       height = canvas.height = window.innerHeight;
     });
 
-    const particles = [];
-    const particleCount = Math.min(45, Math.floor(width / 30));
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
+    // Subtle starfield particles
+    const stars = [];
+    const starCount = Math.min(60, Math.floor(width / 24));
+    for (let i = 0; i < starCount; i++) {
+      stars.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2 + 1,
-        color: Math.random() > 0.5 ? '#00F5FF' : '#A855F7'
+        radius: Math.random() * 1.5 + 0.5,
+        alpha: Math.random() * 0.6 + 0.2,
+        speed: Math.random() * 0.015 + 0.005,
+        color: Math.random() > 0.5 ? '#852CFF' : '#287BFF'
       });
     }
 
-    function animateParticles() {
+    let waveStep = 0;
+
+    function renderNeonWaves() {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw connections
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 130) {
-            ctx.strokeStyle = `rgba(0, 245, 255, ${0.12 * (1 - dist / 130)})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw nodes
-      for (let p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        ctx.fillStyle = p.color;
+      // 1. Draw subtle twinkling star particles
+      for (let s of stars) {
+        s.alpha += Math.sin(waveStep * 2 + s.x) * 0.005;
+        ctx.fillStyle = s.color;
+        ctx.globalAlpha = Math.max(0.1, Math.min(0.8, s.alpha));
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      requestAnimationFrame(animateParticles);
+      ctx.globalAlpha = 1.0;
+
+      // 2. Layered Glowing Waves (Bottom 40% of viewport)
+      const baseHeight = height * 0.72;
+
+      // Layer 1: Deep ambient purple swell
+      drawWaveLayer(baseHeight - 20, 45, 0.0018, waveStep * 0.7, 'rgba(133, 44, 255, 0.12)', 'rgba(5, 3, 13, 0.95)');
+
+      // Layer 2: Electric blue neon wave
+      drawWaveLayer(baseHeight + 15, 60, 0.0025, waveStep * 1.1 + 2, 'rgba(40, 123, 255, 0.18)', 'rgba(9, 8, 23, 0.92)');
+
+      // Layer 3: Vibrant purple-blue glowing crest
+      drawWaveLayer(baseHeight + 50, 50, 0.0032, waveStep * 1.4 + 4, 'rgba(180, 76, 255, 0.22)', 'rgba(5, 3, 13, 0.98)');
+
+      // Layer 4: Top neon highlight line
+      drawWaveLine(baseHeight + 15, 60, 0.0025, waveStep * 1.1 + 2, '#287BFF', 2.0, 0.35);
+      drawWaveLine(baseHeight + 50, 50, 0.0032, waveStep * 1.4 + 4, '#B44CFF', 2.5, 0.45);
+
+      waveStep += 0.015;
+      requestAnimationFrame(renderNeonWaves);
     }
-    animateParticles();
+
+    function drawWaveLayer(baseY, amplitude, frequency, phase, colorTop, colorBottom) {
+      const grad = ctx.createLinearGradient(0, baseY - amplitude, 0, height);
+      grad.addColorStop(0, colorTop);
+      grad.addColorStop(1, colorBottom);
+
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.moveTo(0, height);
+      ctx.lineTo(0, baseY);
+
+      for (let x = 0; x <= width; x += 15) {
+        const y = baseY + Math.sin(x * frequency + phase) * amplitude + Math.cos(x * 0.001 + phase * 0.5) * 15;
+        ctx.lineTo(x, y);
+      }
+
+      ctx.lineTo(width, height);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function drawWaveLine(baseY, amplitude, frequency, phase, strokeColor, lineWidth, alpha) {
+      ctx.strokeStyle = strokeColor;
+      ctx.lineWidth = lineWidth;
+      ctx.globalAlpha = alpha;
+      ctx.shadowColor = strokeColor;
+      ctx.shadowBlur = 15;
+
+      ctx.beginPath();
+      for (let x = 0; x <= width; x += 15) {
+        const y = baseY + Math.sin(x * frequency + phase) * amplitude + Math.cos(x * 0.001 + phase * 0.5) * 15;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      ctx.shadowBlur = 0;
+      ctx.globalAlpha = 1.0;
+    }
+
+    renderNeonWaves();
 
 
     /* ==========================================================================
        I. NAVIGATION, MOBILE MENU, AND BACK TO TOP
-       ========================================================================== */
+       ========================================================================= */
     const backToTopBtn = document.getElementById('btn-back-to-top');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 400) {

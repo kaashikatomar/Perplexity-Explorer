@@ -1,0 +1,1008 @@
+{
+  "I love Python": {
+    "sentence": "I love Python",
+    "tokens": [
+      {
+        "index": 0,
+        "text": "I",
+        "displaySymbol": "I",
+        "tokenId": 40,
+        "probability": 0.00774769764393568,
+        "inverseProbability": 129.0706021269074,
+        "logProbability": -4.860359557955199,
+        "log2Probability": -7.0120166311992405,
+        "surpriseBits": 7.0120166311992405,
+        "topPredictions": [
+          {
+            "tokenId": 383,
+            "tokenText": " The",
+            "probability": 0.02247646450996399,
+            "rank": 1
+          },
+          {
+            "tokenId": 198,
+            "tokenText": "\n",
+            "probability": 0.021488670259714127,
+            "rank": 2
+          },
+          {
+            "tokenId": 13,
+            "tokenText": ".",
+            "probability": 0.016103297472000122,
+            "rank": 3
+          },
+          {
+            "tokenId": 11,
+            "tokenText": ",",
+            "probability": 0.015313005074858665,
+            "rank": 4
+          },
+          {
+            "tokenId": 464,
+            "tokenText": "The",
+            "probability": 0.010339739732444286,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 7,
+        "contextTokens": [
+          "[BOS]"
+        ],
+        "isFirstToken": true
+      },
+      {
+        "index": 1,
+        "text": " love",
+        "displaySymbol": " love",
+        "tokenId": 1842,
+        "probability": 0.016743378713726997,
+        "inverseProbability": 59.72510191029447,
+        "logProbability": -4.089752399535984,
+        "log2Probability": -5.9002655052743025,
+        "surpriseBits": 5.9002655052743025,
+        "topPredictions": [
+          {
+            "tokenId": 447,
+            "tokenText": "�",
+            "probability": 0.1083114743232727,
+            "rank": 1
+          },
+          {
+            "tokenId": 1101,
+            "tokenText": "'m",
+            "probability": 0.05249462276697159,
+            "rank": 2
+          },
+          {
+            "tokenId": 423,
+            "tokenText": " have",
+            "probability": 0.04699864611029625,
+            "rank": 3
+          },
+          {
+            "tokenId": 892,
+            "tokenText": " think",
+            "probability": 0.04281284287571907,
+            "rank": 4
+          },
+          {
+            "tokenId": 716,
+            "tokenText": " am",
+            "probability": 0.04107779636979103,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 12,
+        "contextTokens": [
+          "[BOS]",
+          "I"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 2,
+        "text": " Python",
+        "displaySymbol": " Python",
+        "tokenId": 11361,
+        "probability": 0.00006096635843277909,
+        "inverseProbability": 16402.488613496414,
+        "logProbability": -9.705188347025615,
+        "log2Probability": -14.00162709914721,
+        "surpriseBits": 14.00162709914721,
+        "topPredictions": [
+          {
+            "tokenId": 284,
+            "tokenText": " to",
+            "probability": 0.1910063773393631,
+            "rank": 1
+          },
+          {
+            "tokenId": 262,
+            "tokenText": " the",
+            "probability": 0.10868818312883377,
+            "rank": 2
+          },
+          {
+            "tokenId": 428,
+            "tokenText": " this",
+            "probability": 0.07458063215017319,
+            "rank": 3
+          },
+          {
+            "tokenId": 340,
+            "tokenText": " it",
+            "probability": 0.06612647324800491,
+            "rank": 4
+          },
+          {
+            "tokenId": 616,
+            "tokenText": " my",
+            "probability": 0.03292270004749298,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 959,
+        "contextTokens": [
+          "[BOS]",
+          "I",
+          " love"
+        ],
+        "isFirstToken": false
+      }
+    ],
+    "totalTokens": 3,
+    "evaluatedTokensCount": 3,
+    "perplexity": 501.9163311772527,
+    "crossEntropy": 6.218433434838933,
+    "crossEntropyBits": 8.97130307854025,
+    "productOfInverses": 126442763.9081021,
+    "geometricMean": 501.9163311772527,
+    "handlingOfFirstToken": "Conditioned on Beginning-of-Sequence [BOS] context",
+    "inferenceTimeMs": 120
+  },
+  "The capital of France is Paris": {
+    "sentence": "The capital of France is Paris",
+    "tokens": [
+      {
+        "index": 0,
+        "text": "The",
+        "displaySymbol": "The",
+        "tokenId": 464,
+        "probability": 0.00954506266862154,
+        "inverseProbability": 104.7662058089364,
+        "logProbability": -4.651731256229171,
+        "log2Probability": -6.711029614910013,
+        "surpriseBits": 6.711029614910013,
+        "topPredictions": [
+          {
+            "tokenId": 383,
+            "tokenText": " The",
+            "probability": 0.022094232961535454,
+            "rank": 1
+          },
+          {
+            "tokenId": 198,
+            "tokenText": "\n",
+            "probability": 0.02190808206796646,
+            "rank": 2
+          },
+          {
+            "tokenId": 13,
+            "tokenText": ".",
+            "probability": 0.015741771087050438,
+            "rank": 3
+          },
+          {
+            "tokenId": 11,
+            "tokenText": ",",
+            "probability": 0.01567806862294674,
+            "rank": 4
+          },
+          {
+            "tokenId": 464,
+            "tokenText": "The",
+            "probability": 0.00954506266862154,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 5,
+        "contextTokens": [
+          "[BOS]"
+        ],
+        "isFirstToken": true
+      },
+      {
+        "index": 1,
+        "text": " capital",
+        "displaySymbol": " capital",
+        "tokenId": 3139,
+        "probability": 0.00024229114933405071,
+        "inverseProbability": 4127.265906115637,
+        "logProbability": -8.325370458526443,
+        "log2Probability": -12.010970674079575,
+        "surpriseBits": 12.010970674079575,
+        "topPredictions": [
+          {
+            "tokenId": 717,
+            "tokenText": " first",
+            "probability": 0.009224522858858109,
+            "rank": 1
+          },
+          {
+            "tokenId": 2351,
+            "tokenText": " National",
+            "probability": 0.006343810353428125,
+            "rank": 2
+          },
+          {
+            "tokenId": 471,
+            "tokenText": " U",
+            "probability": 0.006031638942658901,
+            "rank": 3
+          },
+          {
+            "tokenId": 749,
+            "tokenText": " most",
+            "probability": 0.00586209911853075,
+            "rank": 4
+          },
+          {
+            "tokenId": 968,
+            "tokenText": " New",
+            "probability": 0.005604055244475603,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 643,
+        "contextTokens": [
+          "[BOS]",
+          "The"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 2,
+        "text": " of",
+        "displaySymbol": " of",
+        "tokenId": 286,
+        "probability": 0.15196453034877777,
+        "inverseProbability": 6.58048294365056,
+        "logProbability": -1.8841081383354683,
+        "log2Probability": -2.718193467675117,
+        "surpriseBits": 2.718193467675117,
+        "topPredictions": [
+          {
+            "tokenId": 1748,
+            "tokenText": " city",
+            "probability": 0.256618857383728,
+            "rank": 1
+          },
+          {
+            "tokenId": 286,
+            "tokenText": " of",
+            "probability": 0.15196453034877777,
+            "rank": 2
+          },
+          {
+            "tokenId": 11,
+            "tokenText": ",",
+            "probability": 0.0786210224032402,
+            "rank": 3
+          },
+          {
+            "tokenId": 338,
+            "tokenText": "'s",
+            "probability": 0.0547802671790123,
+            "rank": 4
+          },
+          {
+            "tokenId": 318,
+            "tokenText": " is",
+            "probability": 0.04171152785420418,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 2,
+        "contextTokens": [
+          "[BOS]",
+          "The",
+          " capital"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 3,
+        "text": " France",
+        "displaySymbol": " France",
+        "tokenId": 4881,
+        "probability": 0.0028860620222985744,
+        "inverseProbability": 346.4929001087649,
+        "logProbability": -5.847862328113434,
+        "log2Probability": -8.43668198057064,
+        "surpriseBits": 8.43668198057064,
+        "topPredictions": [
+          {
+            "tokenId": 262,
+            "tokenText": " the",
+            "probability": 0.20010796189308167,
+            "rank": 1
+          },
+          {
+            "tokenId": 968,
+            "tokenText": " New",
+            "probability": 0.038733698427677155,
+            "rank": 2
+          },
+          {
+            "tokenId": 2807,
+            "tokenText": " China",
+            "probability": 0.028848638758063316,
+            "rank": 3
+          },
+          {
+            "tokenId": 3794,
+            "tokenText": " India",
+            "probability": 0.023571543395519257,
+            "rank": 4
+          },
+          {
+            "tokenId": 2520,
+            "tokenText": " South",
+            "probability": 0.013847431167960167,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 42,
+        "contextTokens": [
+          "[BOS]",
+          "The",
+          " capital",
+          " of"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 4,
+        "text": " is",
+        "displaySymbol": " is",
+        "tokenId": 318,
+        "probability": 0.07440102100372314,
+        "inverseProbability": 13.440675766397861,
+        "logProbability": -2.598285614068931,
+        "log2Probability": -3.7485337702303814,
+        "surpriseBits": 3.7485337702303814,
+        "topPredictions": [
+          {
+            "tokenId": 11,
+            "tokenText": ",",
+            "probability": 0.39706453680992126,
+            "rank": 1
+          },
+          {
+            "tokenId": 318,
+            "tokenText": " is",
+            "probability": 0.07440102100372314,
+            "rank": 2
+          },
+          {
+            "tokenId": 468,
+            "tokenText": " has",
+            "probability": 0.050711739808321,
+            "rank": 3
+          },
+          {
+            "tokenId": 290,
+            "tokenText": " and",
+            "probability": 0.04194283112883568,
+            "rank": 4
+          },
+          {
+            "tokenId": 13,
+            "tokenText": ".",
+            "probability": 0.03263472020626068,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 2,
+        "contextTokens": [
+          "[BOS]",
+          "The",
+          " capital",
+          " of",
+          " France"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 5,
+        "text": " Paris",
+        "displaySymbol": " Paris",
+        "tokenId": 6342,
+        "probability": 0.00008039748354349285,
+        "inverseProbability": 12438.200251118895,
+        "logProbability": -9.428527681479473,
+        "log2Probability": -13.60249012895475,
+        "surpriseBits": 13.60249012895475,
+        "topPredictions": [
+          {
+            "tokenId": 257,
+            "tokenText": " a",
+            "probability": 0.05603928864002228,
+            "rank": 1
+          },
+          {
+            "tokenId": 262,
+            "tokenText": " the",
+            "probability": 0.053731519728899,
+            "rank": 2
+          },
+          {
+            "tokenId": 284,
+            "tokenText": " to",
+            "probability": 0.034354276955127716,
+            "rank": 3
+          },
+          {
+            "tokenId": 287,
+            "tokenText": " in",
+            "probability": 0.03143243491649628,
+            "rank": 4
+          },
+          {
+            "tokenId": 783,
+            "tokenText": " now",
+            "probability": 0.024257896468043327,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 1067,
+        "contextTokens": [
+          "[BOS]",
+          "The",
+          " capital",
+          " of",
+          " France",
+          " is"
+        ],
+        "isFirstToken": false
+      }
+    ],
+    "totalTokens": 6,
+    "evaluatedTokensCount": 6,
+    "perplexity": 234.15444354478637,
+    "crossEntropy": 5.455980912792154,
+    "crossEntropyBits": 7.871316606070079,
+    "productOfInverses": 164821712734137.88,
+    "geometricMean": 234.15444354478637,
+    "handlingOfFirstToken": "Conditioned on Beginning-of-Sequence [BOS] context",
+    "inferenceTimeMs": 120
+  },
+  "Artificial intelligence is fascinating": {
+    "sentence": "Artificial intelligence is fascinating",
+    "tokens": [
+      {
+        "index": 0,
+        "text": "Art",
+        "displaySymbol": "Art",
+        "tokenId": 8001,
+        "probability": 0.0005073425127193332,
+        "inverseProbability": 1971.0550070800193,
+        "logProbability": -7.5863242149723344,
+        "log2Probability": -10.944752323516445,
+        "surpriseBits": 10.944752323516445,
+        "topPredictions": [
+          {
+            "tokenId": 383,
+            "tokenText": " The",
+            "probability": 0.02175012044608593,
+            "rank": 1
+          },
+          {
+            "tokenId": 198,
+            "tokenText": "\n",
+            "probability": 0.02133590541779995,
+            "rank": 2
+          },
+          {
+            "tokenId": 13,
+            "tokenText": ".",
+            "probability": 0.015811769291758537,
+            "rank": 3
+          },
+          {
+            "tokenId": 11,
+            "tokenText": ",",
+            "probability": 0.015496273525059223,
+            "rank": 4
+          },
+          {
+            "tokenId": 464,
+            "tokenText": "The",
+            "probability": 0.00997502077370882,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 277,
+        "contextTokens": [
+          "[BOS]"
+        ],
+        "isFirstToken": true
+      },
+      {
+        "index": 1,
+        "text": "ificial",
+        "displaySymbol": "ificial",
+        "tokenId": 9542,
+        "probability": 0.018186772242188454,
+        "inverseProbability": 54.98501804956171,
+        "logProbability": -4.00706074902622,
+        "log2Probability": -5.780966671160942,
+        "surpriseBits": 5.780966671160942,
+        "topPredictions": [
+          {
+            "tokenId": 416,
+            "tokenText": " by",
+            "probability": 0.10713136196136475,
+            "rank": 1
+          },
+          {
+            "tokenId": 2983,
+            "tokenText": "icles",
+            "probability": 0.06936897337436676,
+            "rank": 2
+          },
+          {
+            "tokenId": 1023,
+            "tokenText": "ists",
+            "probability": 0.04596251621842384,
+            "rank": 3
+          },
+          {
+            "tokenId": 286,
+            "tokenText": " of",
+            "probability": 0.037974826991558075,
+            "rank": 4
+          },
+          {
+            "tokenId": 29660,
+            "tokenText": "ifact",
+            "probability": 0.030858127400279045,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 9,
+        "contextTokens": [
+          "[BOS]",
+          "Art"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 2,
+        "text": " intelligence",
+        "displaySymbol": " intelligence",
+        "tokenId": 4430,
+        "probability": 0.37839049100875854,
+        "inverseProbability": 2.6427725425501065,
+        "logProbability": -0.9718285715896184,
+        "log2Probability": -1.4020522608265473,
+        "surpriseBits": 1.4020522608265473,
+        "topPredictions": [
+          {
+            "tokenId": 4430,
+            "tokenText": " intelligence",
+            "probability": 0.37839049100875854,
+            "rank": 1
+          },
+          {
+            "tokenId": 9345,
+            "tokenText": " Intelligence",
+            "probability": 0.1624540537595749,
+            "rank": 2
+          },
+          {
+            "tokenId": 12,
+            "tokenText": "-",
+            "probability": 0.0063913920894265175,
+            "rank": 3
+          },
+          {
+            "tokenId": 3303,
+            "tokenText": " language",
+            "probability": 0.006121411453932524,
+            "rank": 4
+          },
+          {
+            "tokenId": 10878,
+            "tokenText": " intellig",
+            "probability": 0.005065853241831064,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 1,
+        "contextTokens": [
+          "[BOS]",
+          "Art",
+          "ificial"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 3,
+        "text": " is",
+        "displaySymbol": " is",
+        "tokenId": 318,
+        "probability": 0.13593316078186035,
+        "inverseProbability": 7.356556665409676,
+        "logProbability": -1.995591978893775,
+        "log2Probability": -2.879030651587842,
+        "surpriseBits": 2.879030651587842,
+        "topPredictions": [
+          {
+            "tokenId": 357,
+            "tokenText": " (",
+            "probability": 0.2617253363132477,
+            "rank": 1
+          },
+          {
+            "tokenId": 318,
+            "tokenText": " is",
+            "probability": 0.13593316078186035,
+            "rank": 2
+          },
+          {
+            "tokenId": 468,
+            "tokenText": " has",
+            "probability": 0.05610613152384758,
+            "rank": 3
+          },
+          {
+            "tokenId": 290,
+            "tokenText": " and",
+            "probability": 0.038418278098106384,
+            "rank": 4
+          },
+          {
+            "tokenId": 11,
+            "tokenText": ",",
+            "probability": 0.03570256382226944,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 2,
+        "contextTokens": [
+          "[BOS]",
+          "Art",
+          "ificial",
+          " intelligence"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 4,
+        "text": " fascinating",
+        "displaySymbol": " fascinating",
+        "tokenId": 13899,
+        "probability": 0.00043209694558754563,
+        "inverseProbability": 2314.295461265633,
+        "logProbability": -7.746860583814283,
+        "log2Probability": -11.176357346727045,
+        "surpriseBits": 11.176357346727045,
+        "topPredictions": [
+          {
+            "tokenId": 257,
+            "tokenText": " a",
+            "probability": 0.12708286941051483,
+            "rank": 1
+          },
+          {
+            "tokenId": 262,
+            "tokenText": " the",
+            "probability": 0.059180691838264465,
+            "rank": 2
+          },
+          {
+            "tokenId": 407,
+            "tokenText": " not",
+            "probability": 0.05249122530221939,
+            "rank": 3
+          },
+          {
+            "tokenId": 281,
+            "tokenText": " an",
+            "probability": 0.029075011610984802,
+            "rank": 4
+          },
+          {
+            "tokenId": 530,
+            "tokenText": " one",
+            "probability": 0.02636083774268627,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 280,
+        "contextTokens": [
+          "[BOS]",
+          "Art",
+          "ificial",
+          " intelligence",
+          " is"
+        ],
+        "isFirstToken": false
+      }
+    ],
+    "totalTokens": 5,
+    "evaluatedTokensCount": 5,
+    "perplexity": 86.6202151533262,
+    "crossEntropy": 4.4615332196592465,
+    "crossEntropyBits": 6.4366318507637645,
+    "productOfInverses": 4876365956.219635,
+    "geometricMean": 86.6202151533262,
+    "handlingOfFirstToken": "Conditioned on Beginning-of-Sequence [BOS] context",
+    "inferenceTimeMs": 120
+  },
+  "I enjoy learning machine learning": {
+    "sentence": "I enjoy learning machine learning",
+    "tokens": [
+      {
+        "index": 0,
+        "text": "I",
+        "displaySymbol": "I",
+        "tokenId": 40,
+        "probability": 0.007908228784799576,
+        "inverseProbability": 126.45056525452353,
+        "logProbability": -4.839851443288059,
+        "log2Probability": -6.982429675870975,
+        "surpriseBits": 6.982429675870975,
+        "topPredictions": [
+          {
+            "tokenId": 383,
+            "tokenText": " The",
+            "probability": 0.02234673500061035,
+            "rank": 1
+          },
+          {
+            "tokenId": 198,
+            "tokenText": "\n",
+            "probability": 0.02190314419567585,
+            "rank": 2
+          },
+          {
+            "tokenId": 13,
+            "tokenText": ".",
+            "probability": 0.01721789874136448,
+            "rank": 3
+          },
+          {
+            "tokenId": 11,
+            "tokenText": ",",
+            "probability": 0.01541393157094717,
+            "rank": 4
+          },
+          {
+            "tokenId": 464,
+            "tokenText": "The",
+            "probability": 0.009607233107089996,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 7,
+        "contextTokens": [
+          "[BOS]"
+        ],
+        "isFirstToken": true
+      },
+      {
+        "index": 1,
+        "text": " enjoy",
+        "displaySymbol": " enjoy",
+        "tokenId": 2883,
+        "probability": 0.00044190415064804256,
+        "inverseProbability": 2262.934164645257,
+        "logProbability": -7.724417553140208,
+        "log2Probability": -11.143978897671039,
+        "surpriseBits": 11.143978897671039,
+        "topPredictions": [
+          {
+            "tokenId": 447,
+            "tokenText": "�",
+            "probability": 0.12037074565887451,
+            "rank": 1
+          },
+          {
+            "tokenId": 1101,
+            "tokenText": "'m",
+            "probability": 0.059275880455970764,
+            "rank": 2
+          },
+          {
+            "tokenId": 423,
+            "tokenText": " have",
+            "probability": 0.046823691576719284,
+            "rank": 3
+          },
+          {
+            "tokenId": 892,
+            "tokenText": " think",
+            "probability": 0.041856568306684494,
+            "rank": 4
+          },
+          {
+            "tokenId": 716,
+            "tokenText": " am",
+            "probability": 0.04151531308889389,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 176,
+        "contextTokens": [
+          "[BOS]",
+          "I"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 2,
+        "text": " learning",
+        "displaySymbol": " learning",
+        "tokenId": 4673,
+        "probability": 0.0031036604195833206,
+        "inverseProbability": 322.20019744758486,
+        "logProbability": -5.775173083553316,
+        "log2Probability": -8.331813567917791,
+        "surpriseBits": 8.331813567917791,
+        "topPredictions": [
+          {
+            "tokenId": 262,
+            "tokenText": " the",
+            "probability": 0.16418544948101044,
+            "rank": 1
+          },
+          {
+            "tokenId": 428,
+            "tokenText": " this",
+            "probability": 0.055970706045627594,
+            "rank": 2
+          },
+          {
+            "tokenId": 616,
+            "tokenText": " my",
+            "probability": 0.05295703932642937,
+            "rank": 3
+          },
+          {
+            "tokenId": 534,
+            "tokenText": " your",
+            "probability": 0.025809593498706818,
+            "rank": 4
+          },
+          {
+            "tokenId": 340,
+            "tokenText": " it",
+            "probability": 0.02446102909743786,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 37,
+        "contextTokens": [
+          "[BOS]",
+          "I",
+          " enjoy"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 3,
+        "text": " machine",
+        "displaySymbol": " machine",
+        "tokenId": 4572,
+        "probability": 0.00006605371891055256,
+        "inverseProbability": 15139.193015826437,
+        "logProbability": -9.625042224106299,
+        "log2Probability": -13.886000685065035,
+        "surpriseBits": 13.886000685065035,
+        "topPredictions": [
+          {
+            "tokenId": 546,
+            "tokenText": " about",
+            "probability": 0.08232486248016357,
+            "rank": 1
+          },
+          {
+            "tokenId": 422,
+            "tokenText": " from",
+            "probability": 0.06659144163131714,
+            "rank": 2
+          },
+          {
+            "tokenId": 649,
+            "tokenText": " new",
+            "probability": 0.06505976617336273,
+            "rank": 3
+          },
+          {
+            "tokenId": 262,
+            "tokenText": " the",
+            "probability": 0.05652965232729912,
+            "rank": 4
+          },
+          {
+            "tokenId": 284,
+            "tokenText": " to",
+            "probability": 0.053491394966840744,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 741,
+        "contextTokens": [
+          "[BOS]",
+          "I",
+          " enjoy",
+          " learning"
+        ],
+        "isFirstToken": false
+      },
+      {
+        "index": 4,
+        "text": " learning",
+        "displaySymbol": " learning",
+        "tokenId": 4673,
+        "probability": 0.8004520535469055,
+        "inverseProbability": 1.249294065233354,
+        "logProbability": -0.222578643970781,
+        "log2Probability": -0.3211131058644359,
+        "surpriseBits": 0.3211131058644359,
+        "topPredictions": [
+          {
+            "tokenId": 4673,
+            "tokenText": " learning",
+            "probability": 0.8004520535469055,
+            "rank": 1
+          },
+          {
+            "tokenId": 12,
+            "tokenText": "-",
+            "probability": 0.017767053097486496,
+            "rank": 2
+          },
+          {
+            "tokenId": 8300,
+            "tokenText": " programming",
+            "probability": 0.011506114155054092,
+            "rank": 3
+          },
+          {
+            "tokenId": 4678,
+            "tokenText": " skills",
+            "probability": 0.006805324926972389,
+            "rank": 4
+          },
+          {
+            "tokenId": 3303,
+            "tokenText": " language",
+            "probability": 0.006594235543161631,
+            "rank": 5
+          }
+        ],
+        "rankOfActualToken": 1,
+        "contextTokens": [
+          "[BOS]",
+          "I",
+          " enjoy",
+          " learning",
+          " machine"
+        ],
+        "isFirstToken": false
+      }
+    ],
+    "totalTokens": 5,
+    "evaluatedTokensCount": 5,
+    "perplexity": 280.73540025471135,
+    "crossEntropy": 5.637412589611733,
+    "crossEntropyBits": 8.133067186477856,
+    "productOfInverses": 1743756740552.8926,
+    "geometricMean": 280.73540025471135,
+    "handlingOfFirstToken": "Conditioned on Beginning-of-Sequence [BOS] context",
+    "inferenceTimeMs": 120
+  }
+}
